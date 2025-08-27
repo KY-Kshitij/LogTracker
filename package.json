@@ -1,0 +1,29 @@
+{
+  "name": "logsaas-lite",
+  "version": "1.0.0",
+  "description": "A lightweight SaaS-style logging platform with alerting, API keys, and dashboards",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "api:dev": "cd apps/api && pnpm dev",
+    "web:dev": "cd apps/web && pnpm dev",
+    "api:build": "cd apps/api && pnpm build",
+    "web:build": "cd apps/web && pnpm build"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.0.0"
+}
