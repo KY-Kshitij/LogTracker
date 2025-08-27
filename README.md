@@ -1,6 +1,25 @@
-# LogSaaS Lite
+# LogTracker - Modern Logging Platform
 
-A lightweight SaaS-style **logging platform** with alerting, API keys, and dashboards.
+[![React](https://img.shields.io/badge/React-18.0+-blue.svg)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.0+-green.svg)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-9.0+-orange.svg)](https://firebase.google.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> **A modern, real-time logging platform with advanced monitoring, alerting, and analytics dashboard.**
+
+LogTracker is a comprehensive SaaS-style logging solution that provides real-time log ingestion, monitoring, alerting, and analytics. Built with modern technologies including React, Node.js, TypeScript, and Firebase.
+
+## ✨ Key Features
+
+- 🔐 **Multi-tenant Authentication** - Firebase-based user management
+- 📊 **Real-time Dashboard** - Live charts and metrics visualization
+- 🚨 **Smart Alerting** - Configurable alert rules with email/Slack integration
+- 🔍 **Advanced Log Search** - Powerful filtering and search capabilities
+- 📈 **Analytics & Insights** - Error trends, geographic distribution, resource usage
+- 🌙 **Dark/Light Mode** - Beautiful UI with theme switching
+- 🔑 **API Key Management** - Secure log ingestion endpoints
+- 📱 **Responsive Design** - Works on desktop and mobile devices
 
 > 📚 **Documentation**: All project docs live in `/docs` - see [CHANGES.md](docs/CHANGES.md) for latest updates and [NEXT_STEP.md](docs/NEXT_STEP.md) for what to do next.
 
