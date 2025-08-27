@@ -99,6 +99,12 @@ temp/
 ehthumbs.db
 Thumbs.db
 
+# Uploaded files and user data
+apps/api/uploads/
+*.har
+*.log
+*.tmp
+
 # Firebase
 .firebase/
 firebase-debug.log
