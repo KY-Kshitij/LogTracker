@@ -19,26 +19,26 @@ const LogExplorer: React.FC = () => {
   // Apply filters and search
   React.useEffect(() => {
     let result = [...logs];
-    
+
     // Apply severity filter
     if (activeFilters.severity.length > 0) {
-      result = result.filter((log) => 
+      result = result.filter((log) =>
         activeFilters.severity.includes(log.severity as LogSeverity)
       );
     }
-    
+
     // Apply source filter
     if (activeFilters.source.length > 0) {
-      result = result.filter((log) => 
+      result = result.filter((log) =>
         activeFilters.source.includes(log.source)
       );
     }
-    
+
     // Apply time range filter
     if (activeFilters.timeRange) {
       const now = new Date();
       let cutoff = new Date();
-      
+
       switch (activeFilters.timeRange) {
         case '1h':
           cutoff.setHours(now.getHours() - 1);
@@ -56,20 +56,20 @@ const LogExplorer: React.FC = () => {
           cutoff.setDate(now.getDate() - 30);
           break;
       }
-      
+
       result = result.filter((log) => log.timestamp >= cutoff);
     }
-    
+
     // Apply search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
-        (log) => 
-          log.message.toLowerCase().includes(query) || 
+        (log) =>
+          log.message.toLowerCase().includes(query) ||
           log.source.toLowerCase().includes(query)
       );
     }
-    
+
     setFilteredLogs(result);
   }, [logs, activeFilters, searchQuery]);
 
@@ -83,26 +83,26 @@ const LogExplorer: React.FC = () => {
       <div className="rounded-lg bg-white p-6 shadow">
         <div className="mb-6 flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
           <LogSearch value={searchQuery} onChange={setSearchQuery} />
-          
+
           <div className="flex flex-wrap items-center gap-2">
-            <button 
+            <button
               className="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50"
               onClick={() => refresh()}
             >
               <RefreshCw size={16} className="mr-2" />
               Refresh
             </button>
-            
+
             <button className="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50">
               <Calendar size={16} className="mr-2" />
               Custom Range
             </button>
-            
+
             <button className="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50">
               <Download size={16} className="mr-2" />
               Export
             </button>
-            
+
             <button className="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50">
               <MoreHorizontal size={16} />
             </button>
@@ -112,9 +112,9 @@ const LogExplorer: React.FC = () => {
         <div className="mb-6 flex items-center">
           <Filter size={16} className="mr-2 text-slate-500" />
           <span className="mr-3 text-sm font-medium text-slate-700">Filters:</span>
-          <LogFilters 
-            activeFilters={activeFilters} 
-            onChange={setActiveFilters} 
+          <LogFilters
+            activeFilters={activeFilters}
+            onChange={setActiveFilters}
             logs={logs}
           />
         </div>
